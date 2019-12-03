@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>完了済み</h2>
-    <form @submit.prevent>
+    <form @submit.prevent> 
       <input type="text" v-model="body">
       <button @click.prevent="createTodo">保存</button>
     </form>
