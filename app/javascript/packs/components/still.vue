@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>未完</h2>
+    <h2>未完了</h2>
     <form @submit.prevent>
       <input type="text" v-model="body">
       <button @click.prevent="createTodo">保存</button>
@@ -18,6 +18,7 @@
     </ul>
   </div>
 </template>
+
 
 <script>
 import axios from "axios"

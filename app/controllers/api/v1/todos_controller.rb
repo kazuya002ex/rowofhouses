@@ -7,16 +7,16 @@ class Api::V1::TodosController < ApplicationController
   end
 
   def create
-  	@todo = Todo.create!(todo_params)
+  	@todo = Todo.create(todo_params)
   	render json: @todo
   end
 
   def update
-  	@todo.update!(todo_params)
+  	@todo.update(todo_params)
   end
 
   def destroy
-  	@todo.destroy!
+  	@todo.destroy
   end
 
   private
