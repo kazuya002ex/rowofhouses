@@ -3,6 +3,7 @@
     <h2>全てのタスク</h2>
     <form @submit.prevent>
       <input type="text" v-model="body">
+      <input type="date" v-model="valid_time">
       <button @click.prevent="createTodo">保存</button>
     </form>
     <ul>
@@ -30,6 +31,7 @@ export default {
       todos: [],
       //テキストボックスの値
       body: "",
+      valid_time: "",
     }
   },
   //一覧読み込み
@@ -43,9 +45,10 @@ export default {
   methods: {
     //Todo作成
     createTodo() {
-      axios.post("/api/v1/todos", { body: this.body }).then((response) => {
+      axios.post("/api/v1/todos", { body: this.body, valid_time: this.valid_time }).then((response) => {
         this.todos.unshift(response.data);
         this.body = "";
+        this.valid_time = "";
       }).catch(() => {
         alert("エラー");
       });
