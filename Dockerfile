@@ -3,8 +3,9 @@ FROM ruby:2.5.3
 # 必要なパッケージのインストール（基本的に必要になってくるものだと思うので削らないこと）
 RUN apt-get update -qq && \
     apt-get install -y build-essential \ 
-                       libpq-dev \        
-                       nodejs           
+                       libpq-dev \
+                       nodejs \
+                       default-mysql-client
 
 # yarnパッケージ管理ツールインストール
 RUN apt-get update && apt-get install -y curl apt-transport-https wget && \
