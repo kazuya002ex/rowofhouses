@@ -1,3 +1,3 @@
 class TodoSerializer < ActiveModel::Serializer
-  attributes :id, :body, :done, :valid_time
+  attributes :id, :body, :done, :valid_date, :deadline
 end
