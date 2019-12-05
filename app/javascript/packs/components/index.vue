@@ -4,6 +4,7 @@
     <form @submit.prevent>
       <input type="text" v-model="body">
       <input type="date" v-model="valid_date">
+      <input type="time" v-model="deadline">
       <button @click.prevent="createTodo">保存</button>
     </form>
     <ul>
@@ -32,6 +33,7 @@ export default {
       //テキストボックスの値
       body: "",
       valid_date: "",
+      deadline: "",
     }
   },
   //一覧読み込み
@@ -45,10 +47,11 @@ export default {
   methods: {
     //Todo作成
     createTodo() {
-      axios.post("/api/v1/todos", { body: this.body, valid_date: this.valid_date }).then((response) => {
+      axios.post("/api/v1/todos", { body: this.body, valid_date: this.valid_date, deadline: this.deadline }).then((response) => {
         this.todos.unshift(response.data);
         this.body = "";
         this.valid_date = "";
+        this.deadline = "";
       }).catch(() => {
         alert("エラー");
       });
