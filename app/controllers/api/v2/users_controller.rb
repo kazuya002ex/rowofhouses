@@ -4,7 +4,7 @@ class Api::V2::UsersController < ApplicationController
     @user = User.new(user_params)
     pp @user
     if @user.save
-      #  render json: @user
+      render json: @user
       puts "ユーザー情報を保存しました！"
     else
       puts "無理。"

@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery 
+  protect_from_forgery
   # include JWTSessions::RailsAuthorization
   # # rescue_form JWTSessions::Errors::Unauthorized, with: :not_authorized
 
