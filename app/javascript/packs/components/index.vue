@@ -53,7 +53,7 @@ export default {
         this.valid_date = "";
         this.deadline = "";
       }).catch(() => {
-        alert("エラー");
+        alert("クライアントエラー");
       });
     },
     //checkボックスで発火する済んだかどうかのやつ

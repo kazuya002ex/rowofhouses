@@ -1,12 +1,14 @@
 class Api::V2::UsersController < ApplicationController
 
   def create
-    @user = User.create(user_params)
+    @user = User.new(user_params)
     pp @user
-    pp @user
-    pp @user
-    #  render json: @user
-    puts "ユーザー情報を保存しました！"
+    if @user.save
+      #  render json: @user
+      puts "ユーザー情報を保存しました！"
+    else
+      puts "無理。"
+    end
   end
 
   private

@@ -38,9 +38,9 @@ export default {
         this.name = "";
         this.password = "";
         this.password_confirmation = "";
-        alert("サインアップ完了");
+        alert("サインアップ");
       }).catch(() => {
-        alert("サインアップエラー");
+        alert("クライアントエラー");
       });
     },
   }
