@@ -5,10 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-10.times { |i|
-  Todo.create!(body: "task#{i}")
-}
+# 10.times { |i|
+#   Todo.create!(body: "task#{i}")
+# }
 
-4.times { |i|
-  Todo.create!(body: "task#{i}done", done: true)
-}
+# 4.times { |i|
+#   Todo.create!(body: "task#{i}done", done: true)
+# }
+
+User.create!(
+  name: "User User",
+  password: "aaaaaa",
+  password_confirmation: "aaaaaa"
+)
