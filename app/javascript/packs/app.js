@@ -2,6 +2,8 @@ import Vue from 'vue/dist/vue.esm.js'
 import Header from './components/header.vue'
 import UserHeader from './components/userHeader.vue'
 import Router from './router/router'
+import VueAxios from 'vue-axios'
+import { securedAxiosInstance, plainAxiosInstance } from '../backend/axios/axios.js'
 
 document.addEventListener('DOMContentLoaded', () => {
     const app = new Vue({
