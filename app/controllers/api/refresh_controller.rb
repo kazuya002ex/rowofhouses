@@ -1,2 +1,2 @@
-class Api::V2::RefreshController < ApplicationController
+class Api::RefreshController < ApplicationController
 end

@@ -39,7 +39,7 @@ export default {
   methods: {
     // サインアップ
     signup() {
-      this.$http.plain.post('/api/v2/signup', { name: this.name, password: this.password, password_confirmation: this.password_confirmation })
+      this.$http.plain.post('/api/signup', { name: this.name, password: this.password, password_confirmation: this.password_confirmation })
         .then(response => this.signupSuccessful(response))
         .catch(error => this.signupFailed(error))
     },
