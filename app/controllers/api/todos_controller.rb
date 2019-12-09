@@ -1,5 +1,4 @@
 class Api::TodosController < ApplicationController
-  protect_from_forgery except: [:create, :update]
   before_action :set_todo, only: [:update, :destroy]
 
   def index
