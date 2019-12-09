@@ -4,7 +4,7 @@ import Index from '../pages/index.vue'
 import Still from '../pages/still.vue'
 import Checked from '../pages/checked.vue'
 import Signup from '../pages/signupForm.vue'
-import Login from '../pages/loginForm.vue'
+import Signin from '../pages/loginForm.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +15,6 @@ export default new VueRouter({
         { path: '/still', component: Still },
         { path: '/checked', component: Checked },
         { path: '/signup', component: Signup },
-        { path: '/login', component: Login },
+        { path: '/login', component: Signin },
     ],
 })

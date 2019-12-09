@@ -13,9 +13,17 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(app.$el)
 })
 
+Vue.config.productionTip = false
+Vue.use(VueAxios, {
+    secured: securedAxiosInstance,
+    plain: plainAxiosInstance
+})
+
 var haeder = new Vue({
     router: Router,
     store: Store,
+    securedAxiosInstance,
+    plainAxiosInstance,
     el: '#header',
     components: {
         'navbar': Header,
