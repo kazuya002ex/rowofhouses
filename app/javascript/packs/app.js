@@ -1,8 +1,9 @@
 import Vue from 'vue/dist/vue.esm.js'
 import Header from './components/header.vue'
 import UserHeader from './components/userHeader.vue'
-import Router from './router/router'
+import Router from '../router/router'
 import VueAxios from 'vue-axios'
+import Store from '../store/store.js'
 import { securedAxiosInstance, plainAxiosInstance } from '../backend/axios/axios.js'
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 var haeder = new Vue({
     router: Router,
+    store: Store,
     el: '#header',
     components: {
         'navbar': Header,
