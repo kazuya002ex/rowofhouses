@@ -62,5 +62,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'active_model_serializers'
 gem 'jwt_sessions'
-gem 'redis'
+gem 'redis-store'
+gem 'redis-rails'
 gem 'foreman'

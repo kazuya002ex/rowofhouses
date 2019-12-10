@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::API
   include JWTSessions::RailsAuthorization
-  include SessionHelper
   # rescue_from JWTSessions::Errors::Unauthorized, with: :not_authorized
 
 
