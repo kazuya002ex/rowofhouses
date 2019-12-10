@@ -2,26 +2,62 @@
   <div>
     <h1>Login!</h1>
       <li>名前</li>
-      <input type="text">
+      <form @submit.prevent="signin">
+        <li>名前</li>
+        <input type="text" v-model="name">
 
-      <li>パスワード</li>
-      <input type="password">
+        <li>パスワード</li>
+        <input type="password" v-model="password">
 
-      <button>ログイン</button>
+        <button>ログイン</button>
+      </form>
   </div>
 </template>
 
 
 <script>
 export default {
+  name: 'Signin',
   data() {
     return {
-      name: "",
-      password: "",
+      name: '',
+      password: '',
+      error: '',
     }
   },
+  created() {
+    this.checkSignedIn()
+  },
+  updated() {
+    this.checkSignedIn()
+  },
   methods: {
-    // ログイン処理
+    signin() {
+      this.$http.plain.post('/api/signin', { name: this.name, password: this.password })
+        .then(response => this.signinSuccessful(response))
+        .catch(error => this.signinFailed(error))
+    },
+    signinSuccessful(response) {
+      if (!response.data.csrf) {
+        this.signinFailed(response)
+        return
+      }
+      localStorage.csrf = response.data.csrf
+      localStorage.signin = true
+      this.$store.dispatch('doFetchSignedIn')
+      this.error = ''
+      this.$router.replace('/')
+    },
+    signinFailed(error) {
+      this.error = (error.response && error.response.data && error.response.data.error) || ''
+      delete localStorage.csrf
+      delete localStorage.signedIn
+    },
+    checkSignedIn() {
+      if (localStorage.signedIn) {
+        this.$router.replace('/')
+      }
+    }
   }
 }
 </script>
