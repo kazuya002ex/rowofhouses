@@ -1,7 +1,6 @@
 <template>
   <div>
     <h1>Login!</h1>
-      <li>名前</li>
       <form @submit.prevent="signin">
         <li>名前</li>
         <input type="text" v-model="name">

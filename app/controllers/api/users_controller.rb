@@ -5,6 +5,7 @@ class Api::UsersController < ApplicationController
     if user.save
       payload = { user_id: user.id }
       session = JWTSessions::Session.new(payload: payload, refresh_by_access_allowed: true)
+      session[:user_id] = user.id
       tokens = session.login
 
       # set-cookieヘッダーに{ jwt_access = アクセストークン; secure; httponly }をセットして送信
