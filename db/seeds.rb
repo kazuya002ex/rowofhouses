@@ -18,3 +18,15 @@ User.create!(
   password: "aaaaaa",
   password_confirmation: "aaaaaa"
 )
+
+User.create!(
+  name: "uoUo",
+  password: 'aa',
+  password_confirmation: 'aa'
+)
+
+User.create!(
+  name: "qw",
+  password: 'qw',
+  password_confirmation: 'qw'
+)

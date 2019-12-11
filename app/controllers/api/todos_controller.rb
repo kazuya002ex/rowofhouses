@@ -7,7 +7,10 @@ class Api::TodosController < ApplicationController
   end
 
   def create
-    @todo = Todo.create(todo_params)
+    @todo = Todo.new(todo_params)
+    @todo.user_id = 2 #本来は「current_user」が入る
+    pp @todo
+    @todo.save
   	render json: @todo
   end
 
