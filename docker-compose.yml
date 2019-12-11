@@ -15,14 +15,10 @@ services:
       - .:/app_name
     ports:
       - "3000:3000"
-    links:
-      - db
-      - redis
-    depends_on:
-      - db
-      - redis
     environment:
       REDIS_URL: redis://redis6379
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
 
   redis:
     image: redis:latest
