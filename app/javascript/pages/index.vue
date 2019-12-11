@@ -34,12 +34,14 @@ export default {
       body: "",
       valid_date: "",
       deadline: "",
+      user_id: "",
     }
   },
   //一覧読み込み
   mounted () {
     axios.get('/api/todos').then((response) => {
       this.todos = response.data
+      console.log(response.data)
       }).catch(() => {
         alert("エラー");
       });
