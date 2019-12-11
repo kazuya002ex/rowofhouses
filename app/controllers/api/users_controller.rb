@@ -1,12 +1,20 @@
 class Api::UsersController < ApplicationController
 
+  def log_in(user)
+    session[:user_id] = @user.id
+  end
+
   def create
-    user = User.new(user_params)
-    if user.save
-      payload = { user_id: user.id }
-      session = JWTSessions::Session.new(payload: payload, refresh_by_access_allowed: true)
-      pp session
-      tokens = session.login
+    @user = User.new(user_params)
+    if @user.save
+      pp @user
+      # payload = { user_id: user.id }
+      # session = JWTSessions::Session.new(payload: payload, refresh_by_access_allowed: true)
+      # pp session
+      # tokens = session.login
+      log_in @user
+      pp session[:user_id]
+      render json: @user
 
       # set-cookieヘッダーに{ jwt_access = アクセストークン; secure; httponly }をセットして送信
       response.set_cookie(JWTSessions.access_cookie,

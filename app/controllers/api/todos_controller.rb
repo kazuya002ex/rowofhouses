@@ -3,12 +3,13 @@ class Api::TodosController < ApplicationController
 
   def index
   	@todo = Todo.all.order("created_at DESC")
-  	render json: @todo
+    render json: @todo
   end
 
   def create
     @todo = Todo.new(todo_params)
-    @todo.user_id = 2 #本来は「current_user」が入る
+    current_user = 1  #本来は「ログイン中のuser」が入る
+    @todo.user_id = current_user
     pp @todo
     @todo.save
   	render json: @todo
