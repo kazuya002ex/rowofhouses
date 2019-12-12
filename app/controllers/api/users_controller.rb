@@ -1,15 +1,17 @@
 class Api::UsersController < ApplicationController
+  # protect_from_forgery except: [:create]
 
   def log_in(user)
     session[:user_id] = @user.id
   end
 
   def create
-    user = User.new(user_params)
-    if user.save
-      pp user
+    @user = User.new(user_params)
+    if @user.save
+      pp @user
       # payloadは、トークン自体に内包されるユーザー情報。ここではuser_idを内包させている。
-      payload = { user_id: user.id }
+      payload = { user_id: @user.id }
+      pp payload
       session = JWTSessions::Session.new(payload: payload, refresh_by_access_allowed: true)
       tokens = session.login
 
