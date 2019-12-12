@@ -2,8 +2,9 @@
   <div>
     <h2>完了済み</h2>
     <form @submit.prevent>
-      <input type="text" v-model="body" />
-      <input type="date" v-model="valid_date" />
+      <input type="text" v-model="body">
+      <input type="date" v-model="valid_date">
+      <input type="time" v-model="deadline">
       <button @click.prevent="createTodo">保存</button>
     </form>
     <ul>
@@ -30,7 +31,9 @@ export default {
       todos: [],
       //テキストボックスの値
       body: "",
-      valid_date: ""
+      valid_date: "",
+      deadline: "",
+      user_id: "",
     };
   },
   //一覧読み込み
@@ -48,11 +51,12 @@ export default {
     //Todo作成
     createTodo() {
       axios
-        .post("/api/todos", { body: this.body, valid_date: this.valid_date })
+        .post("/api/todos", { body: this.body, valid_date: this.valid_date, deadline: this.deadline })
         .then(response => {
           this.todos.unshift(response.data);
           this.body = "";
           this.valid_date = "";
+          this.deadline = "";
         })
         .catch(() => {
           alert("エラー");

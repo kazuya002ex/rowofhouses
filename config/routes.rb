@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/still', to: 'home#index'
   get '/checked', to: 'home#index'
   get '/signup', to: 'home#index'
-  get '/login', to: 'home#index'
+  get '/signin', to: 'home#index'
   
   namespace :api do
     resources :todos, :only => [:index, :create, :update, :destroy]

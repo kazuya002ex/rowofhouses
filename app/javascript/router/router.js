@@ -15,6 +15,6 @@ export default new VueRouter({
         { path: '/still', component: Still },
         { path: '/checked', component: Checked },
         { path: '/signup', component: Signup },
-        { path: '/login', component: Signin },
+        { path: '/signin', component: Signin },
     ],
 })
