@@ -4,8 +4,6 @@ namespace :todo do
   task delete: :environment do
     expired_todos = []
     today_todos = Todo.where(valid_date: Time.zone.today)
-    puts "日付だけ"
-    pp today_todos
     today_todos.map do |todo|
       if todo.deadline.to_s(:time) < Time.zone.now.to_s(:time)
         expired_todos << todo
@@ -13,9 +11,6 @@ namespace :todo do
         next
       end
     end
-    
-    puts "配列￥"
-    pp expired_todos
-    # expired_todos.each { |todo| todo.destroy }
+    expired_todos.each { |todo| todo.destroy }
   end
 end
