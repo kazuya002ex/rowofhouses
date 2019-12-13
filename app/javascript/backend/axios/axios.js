@@ -6,7 +6,7 @@ const securedAxiosInstance = axios.create({
     baseURL: API_URL,
     withCredentials: true,
     headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'app/json'
     }
 })
 
@@ -14,7 +14,7 @@ const plainAxiosInstance = axios.create({
     baseURL: API_URL,
     withCredentials: true,
     headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'app/json'
     }
 })
 

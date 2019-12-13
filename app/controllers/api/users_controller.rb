@@ -10,7 +10,7 @@ class Api::UsersController < ApplicationController
     if @user.save
       # payloadは、トークン自体に内包されるユーザー情報。ここではuser_idを内包させている。
       payload = { user_id: @user.id }
-      pp payload
+      pp "payload = #{payload}"
       session = JWTSessions::Session.new(payload: payload, refresh_by_access_allowed: true)
       tokens = session.login
 
