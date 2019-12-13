@@ -3,7 +3,8 @@ class Api::SessionsController < ApplicationController
   # protect_from_forgery except: [:create, :destroy]
 
   def create
-    @user = User.find_by(name: params[:id])
+    @user = User.find_by(name: params[:name])
+    pp @user
     if @user && @user.authenticate(params[:password])
       pp @user.id
       payload = { user_id: @user.id }
