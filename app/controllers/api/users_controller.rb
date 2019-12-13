@@ -8,7 +8,6 @@ class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      pp @user
       # payloadは、トークン自体に内包されるユーザー情報。ここではuser_idを内包させている。
       payload = { user_id: @user.id }
       pp payload

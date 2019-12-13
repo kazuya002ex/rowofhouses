@@ -4,9 +4,7 @@ class Api::SessionsController < ApplicationController
 
   def create
     @user = User.find_by(name: params[:name])
-    pp @user
     if @user && @user.authenticate(params[:password])
-      pp @user.id
       payload = { user_id: @user.id }
       session = JWTSessions::Session.new(payload: payload, refresh_by_access_allowed: true)
       tokens = session.login
