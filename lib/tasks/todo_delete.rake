@@ -11,6 +11,7 @@ namespace :todo do
         next
       end
     end
+    puts "#{expired_todos.count}件のタスクを削除しました。"
     expired_todos.each { |todo| todo.destroy }
   end
 end
