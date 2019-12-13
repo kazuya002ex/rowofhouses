@@ -9,9 +9,9 @@
 #   Todo.create!(body: "task#{i}")
 # }
 
-# 4.times { |i|
-#   Todo.create!(body: "task#{i}done", done: true)
-# }
+4.times { |i|
+  Todo.create!(body: "task#{i}done", done: true, valid_date: '2019-12-25', deadline: '12:12:00', user_id: 1)
+}
 
 User.create!(
   name: "User User",
