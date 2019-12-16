@@ -4,9 +4,10 @@
       <li><router-link to="/">全て</router-link></li>
       <li><router-link to="/still">未完了</router-link></li>
       <li><router-link to="/checked">完了</router-link></li>
-      <li><router-link to="/signin">ログイン</router-link></li>
-      <li><router-link to="/signup">新規登録</router-link></li>
+      <li><router-link to="/signin" v-if="!signedIn">ログイン</router-link></li>
+      <li><router-link to="/signup" v-if="!signedIn">新規登録</router-link></li>
       <li><a href="/" v-if="signedIn" @click="signOut">ログアウト</a></li>
+      <li v-if="signedIn">name さん</li>
     </ul>
   </div>
 </template>

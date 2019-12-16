@@ -42,7 +42,7 @@ export default {
         return
       }
       localStorage.csrf = response.data.csrf
-      localStorage.signin = true
+      localStorage.signedIn = true
       this.$store.dispatch('doFetchSignedIn')
       this.error = ''
       this.$router.replace('/')
