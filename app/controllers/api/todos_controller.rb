@@ -16,6 +16,7 @@ class Api::TodosController < ApplicationController
   end
 
   def update
+    @todo.done_time = Time.zone.now
   	@todo.update(todo_params)
   end
 
