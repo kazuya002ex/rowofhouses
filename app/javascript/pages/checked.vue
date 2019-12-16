@@ -34,6 +34,7 @@ export default {
       valid_date: "",
       deadline: "",
       user_id: "",
+      done_time: "",
     };
   },
   //一覧読み込み
@@ -81,6 +82,12 @@ export default {
         .catch(() => {
           alert("エラー");
         });
+    }
+  },
+  computed: {
+    doneTodo() {
+      // 全件データを取得する
+      // １つずつ「done_time」の新しい順に並べるようにする
     }
   }
 };
