@@ -8,7 +8,8 @@
       <button @click.prevent="createTodo">保存</button>
     </form>
     <ul>
-      <li v-for="(todo, index) in todos" :key="todo.id">
+      <!-- 本来v-ifは「current_user」とかになる -->
+      <li v-for="(todo, index) in todos" :key="todo.id" v-if="todo.user_id === 1">
         <input
           type="checkbox"
           @change="doneChange(index, todo.id, todo.done)"
