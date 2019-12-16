@@ -7,7 +7,6 @@
       <li><router-link to="/signin" v-if="!signedIn">ログイン</router-link></li>
       <li><router-link to="/signup" v-if="!signedIn">新規登録</router-link></li>
       <li><a href="/" v-if="signedIn" @click="signOut">ログアウト</a></li>
-      <li v-if="signedIn">name さん</li>
     </ul>
   </div>
 </template>
@@ -39,3 +38,26 @@
 	}
   }
 </script>
+
+
+<style scoped>
+
+  div {
+    padding-top: 30px;
+    padding-bottom: 80px;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .dropdown-content {
+    float: left;
+    width: 100%;
+  }
+
+  .dropdown-content li {
+    float: left;
+    padding: 20px;
+  }
+</style>
