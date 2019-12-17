@@ -1,5 +1,4 @@
 class Api::UsersController < ApplicationController
-  # protect_from_forgery except: [:create]
 
   def log_in(user)
     session[:user_id] = @user.id
