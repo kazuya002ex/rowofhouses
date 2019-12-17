@@ -9,7 +9,7 @@
     </form>
     <ul>
       <!-- 本来v-ifは「current_user」とかになる -->
-      <li v-for="(todo, index) in todos" :key="todo.id" v-if="todo.user_id === 1">
+      <li v-for="(todo, index) in todos" :key="todo.id" v-if="todo.user_id === 2">
         <input
           type="checkbox"
           @change="doneChange(index, todo.id, todo.done)"
