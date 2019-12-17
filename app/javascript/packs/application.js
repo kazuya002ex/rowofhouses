@@ -3,7 +3,10 @@ import App from './App.vue'
 import Router from '../router/router'
 import Store from '../store/store.js'
 import VueAxios from 'vue-axios'
+import Vuetify from 'vuetify'
 import { securedAxiosInstance, plainAxiosInstance } from '../backend/axios/axios.js'
+
+Vue.use(Vuetify)
 
 Vue.config.productionTip = false
 Vue.use(VueAxios, {
