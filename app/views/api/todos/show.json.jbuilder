@@ -1,0 +1,1 @@
+json.extract! @todo, :id, :body, :done, :valid_date, :deadline, :user_id, :done_time
