@@ -8,8 +8,7 @@ class Api::TodosController < ApplicationController
 
   def create
     @todo = Todo.new(todo_params)
-    # current_user = 2  #本来は「ログイン中のuser」が入る
-    @todo.user_id = @current_user
+    @todo.user_id = session[:user_id]
     pp @todo
     @todo.save
   	render json: @todo
