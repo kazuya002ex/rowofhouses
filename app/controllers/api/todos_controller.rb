@@ -2,7 +2,8 @@ class Api::TodosController < ApplicationController
   before_action :set_todo, only: [:update, :destroy]
 
   def index
-  	@todo = Todo.all.order("created_at DESC")
+    @todo = Todo.where(user_id: session[:user_id]).order("created_at DESC")
+    pp "Todoだよーー：：#{@todo}"
     render json: @todo
   end
 
