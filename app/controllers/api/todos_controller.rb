@@ -2,8 +2,8 @@ class Api::TodosController < ApplicationController
   before_action :set_todo, only: [:update, :destroy]
 
   def index
+    # ログイン中のユーザーのTodoのみ取得
     @todo = Todo.where(user_id: session[:user_id]).order("created_at DESC")
-    pp "Todoだよーー：：#{@todo}"
     render json: @todo
   end
 

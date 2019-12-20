@@ -1,9 +1,9 @@
 <template>
   <div>
     <ul id="dropdown" class="dropdown-content">
-      <li><router-link to="/">全て</router-link></li>
-      <li><router-link to="/still">未完了</router-link></li>
-      <li><router-link to="/checked">完了</router-link></li>
+      <li><router-link to="/" v-if="signedIn">全て</router-link></li>
+      <li><router-link to="/still" v-if="signedIn">未完了</router-link></li>
+      <li><router-link to="/checked" v-if="signedIn">完了</router-link></li>
       <li><router-link to="/signin" v-if="!signedIn">ログイン</router-link></li>
       <li><router-link to="/signup" v-if="!signedIn">新規登録</router-link></li>
       <li><a href="/" v-if="signedIn" @click="signOut">ログアウト</a></li>
