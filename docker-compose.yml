@@ -17,8 +17,6 @@ services:
       - .:/app_name
     ports:
       - "3000:3000"
-    links:
-      - db
     environment:
       REDIS_URL: redis://redis:6379
       REDIS_HOST: redis
