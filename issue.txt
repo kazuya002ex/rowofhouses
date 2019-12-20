@@ -1,0 +1,8 @@
+v-ifは「current_user」とかになる(index.vue 13行目辺り)
+<li v-for="(todo, index) in todos" :key="todo.id" v-if="todo.user_id === 2">
+
+「全てのタスク」の部分は「$(name)さんのタスク」になる(index.vue 4行目辺り)
+<h2>全てのタスク</h2>
+
+「current_user」にはログイン中のuser_idが入る(todos_controller.rb 11行目辺り)
+current_user = 2  #本来は「ログイン中のuser」が入る
