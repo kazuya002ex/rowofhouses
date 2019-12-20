@@ -84,7 +84,6 @@ GEM
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.11.3)
-    foreman (0.86.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.7.0)
@@ -117,6 +116,7 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.5)
       mini_portile2 (~> 2.4.0)
+    pg (1.1.4)
     public_suffix (4.0.1)
     puma (3.12.1)
     rack (2.0.7)
@@ -233,16 +233,14 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
-  foreman
   jbuilder (~> 2.5)
   jwt_sessions
   listen (>= 3.0.5, < 3.2)
   mysql2 (>= 0.4.4, < 0.6.0)
+  pg
   puma (~> 3.11)
   rails (~> 5.2.4)
-  redis
   redis-rails
-  redis-store
   sass-rails (~> 5.0)
   selenium-webdriver
   spring

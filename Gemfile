@@ -39,3 +39,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'active_model_serializers'
 gem 'jwt_sessions'
 gem 'redis-rails'
+
+
+group :production do
+  gem 'pg'
+end
