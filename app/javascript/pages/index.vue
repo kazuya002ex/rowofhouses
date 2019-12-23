@@ -16,6 +16,7 @@
           v-model="todo.done"
         >
         <span :class="{ done: todo.done }">{{ todo.body }}</span>
+        <button v-on:click="deleteTodo(index, todo.id)">削除</button>
       </li>
     </ul>
   </div>
