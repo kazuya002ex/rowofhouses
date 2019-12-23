@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>全てのタスク</h2>
+    <h2>全てのTodo</h2>
     <form @submit.prevent>
       <input type="text" v-model="body">
       <input type="date" v-model="valid_date">
@@ -16,7 +16,6 @@
           v-model="todo.done"
         >
         <span :class="{ done: todo.done }">{{ todo.body }}</span>
-        <button v-on:click="deleteTodo(index, todo.id)">削除</button>
       </li>
     </ul>
   </div>
@@ -66,7 +65,7 @@ export default {
         alert("エラー");
       });
     },
-    //Todo削除
+    //Todo削除（使っていない）
     deleteTodo(index, delete_id) {
       axios.delete(`/api/todos/${delete_id}`).then((response) => {
         this.todos.splice(index, 1);

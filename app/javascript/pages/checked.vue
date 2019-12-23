@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>完了済み</h2>
+    <h2>完了済みのTodo</h2>
     <form @submit.prevent>
       <input type="text" v-model="body">
       <input type="date" v-model="valid_date">
@@ -15,7 +15,6 @@
           v-model="todo.done"
         />
         <span :class="{ done: todo.done }">{{ todo.body }}</span>
-        <button v-on:click="deleteTodo(index, todo.id)">削除</button>
       </li>
     </ul>
   </div>
@@ -72,7 +71,7 @@ export default {
           alert("エラー");
         });
     },
-    //Todo削除
+    //Todo削除（使っていない）
     deleteTodo(index, delete_id) {
       axios
         .delete(`/api/todos/${delete_id}`)
@@ -82,12 +81,6 @@ export default {
         .catch(() => {
           alert("エラー");
         });
-    }
-  },
-  computed: {
-    doneTodo() {
-      // 全件データを取得する
-      // １つずつ「done_time」の新しい順に並べるようにする
     }
   }
 };
