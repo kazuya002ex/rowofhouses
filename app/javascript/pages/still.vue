@@ -39,7 +39,7 @@ export default {
   //一覧読み込み
   mounted() {
     axios
-      .get("/api/todos")
+      .get("/api/stills")
       .then(response => {
         this.todos = response.data;
       })

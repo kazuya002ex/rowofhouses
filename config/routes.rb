@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   namespace :api, { format: "json" } do
     resources :todos, :only => [:index, :create, :update, :destroy]
     get 'checks', controller: :checks, action: :index
+    get 'stills', controller: :stills, action: :index
     post 'signup', controller: :users, action: :create
     post 'signin', controller: :sessions, action: :create
     delete 'signin', controller: :sessions, action: :destroy
