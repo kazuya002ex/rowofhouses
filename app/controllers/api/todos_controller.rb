@@ -3,7 +3,7 @@ class Api::TodosController < ApplicationController
 
   def index
     # ログイン中のユーザーのTodoのみ取得
-    @todo = Todo.where(user_id: session[:user_id]).order("created_at DESC")
+    @todo = Todo.where(user_id: session[:user_id]).order("created_at ASC")
     render json: @todo
   end
 

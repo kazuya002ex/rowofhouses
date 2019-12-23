@@ -40,7 +40,7 @@ export default {
   //一覧読み込み
   mounted() {
     axios
-      .get("/api/todos")
+      .get("/api/checks")
       .then(response => {
         this.todos = response.data;
       })

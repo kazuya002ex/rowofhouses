@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   get '/signup', to: 'home#index'
   get '/signin', to: 'home#index'
   
-  namespace :api do
+  namespace :api, { format: "json" } do
     resources :todos, :only => [:index, :create, :update, :destroy]
+    get 'checks', controller: :checks, action: :index
     post 'signup', controller: :users, action: :create
     post 'signin', controller: :sessions, action: :create
     delete 'signin', controller: :sessions, action: :destroy
