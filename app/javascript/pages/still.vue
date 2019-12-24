@@ -15,6 +15,10 @@
           v-model="todo.done"
         />
         <span :class="{ done: todo.done }">{{ todo.body }}</span>
+        <br>
+        <span>{{ todo.valid_date }}</span>
+        <span>{{ todo.deadline | moment }}</span>
+        <hr>
       </li>
     </ul>
   </div>
@@ -22,6 +26,7 @@
 
 <script>
 import axios from "axios";
+import moment from "moment";
 
 export default {
   data: function() {
@@ -80,6 +85,11 @@ export default {
         .catch(() => {
           alert("エラー");
         });
+    }
+  },
+  filters: {
+    moment: function(date) {
+      return moment(date).format("HH:mm");
     }
   }
 };

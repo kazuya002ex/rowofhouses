@@ -16,7 +16,11 @@
           v-model="todo.done"
         >
         <span :class="{ done: todo.done }">{{ todo.body }}</span>
-        <button v-on:click="deleteTodo(index, todo.id)">削除</button>
+        <br>
+        <span>{{ todo.valid_date }}</span>
+        <span>{{ todo.deadline | moment }}</span>
+        <hr>
+        <!-- <button v-on:click="deleteTodo(index, todo.id)">削除</button> moment(todo.deadline, "HH:mm")-->
       </li>
     </ul>
   </div>
@@ -24,7 +28,8 @@
 
 
 <script>
-import axios from "axios"
+import axios from "axios";
+import moment from "moment";
 
 export default {
   data: function() {
@@ -79,6 +84,11 @@ export default {
       }).catch(() => {
         alert("エラー");
       });
+    },
+  },
+  filters: {
+    moment: function(date) {
+      return moment(date).format("HH:mm");
     }
   }
 }
