@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get 'checks', controller: :checks, action: :index
     get 'stills', controller: :stills, action: :index
     post 'signup', controller: :users, action: :create
+    get 'users', controller: :users, action: :show
     post 'signin', controller: :sessions, action: :create
     delete 'signin', controller: :sessions, action: :destroy
     post 'refresh', controller: :refresh, action: :create

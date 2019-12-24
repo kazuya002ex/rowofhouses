@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>全てのTodo</h2>
+    <h2>{{ user.name }}さんのTodo</h2>
     <form @submit.prevent>
       <input type="text" v-model="body">
       <input type="date" v-model="valid_date">
@@ -35,17 +35,23 @@ export default {
       body: "",
       valid_date: "",
       deadline: "",
-      user_id: "",
+      user: "",
     }
   },
   //一覧読み込み
   mounted () {
     axios.get('/api/todos').then((response) => {
       this.todos = response.data
-      console.log(response.data)
-      }).catch(() => {
-        alert("エラー");
-      });
+      // console.log(response.data)
+    }).catch(() => {
+      alert("todosエラー");
+    });
+    axios.get('/api/users').then((response) => {
+      this.user = response.data
+      // console.log(response.data)
+    }).catch(() => {
+      alert("usersエラー");
+    });
   },
   methods: {
     //Todo作成
