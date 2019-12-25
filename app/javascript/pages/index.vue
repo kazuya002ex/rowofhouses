@@ -18,7 +18,7 @@
         <span :class="{ done: todo.done }">{{ todo.body }}</span>
         <br>
         <span>{{ todo.valid_date }}</span>
-        <span>{{ todo.deadline | moment }}</span>
+        <span>{{ todo.deadline | moment }}まで</span>
         <hr>
         <!-- <button v-on:click="deleteTodo(index, todo.id)">削除</button> moment(todo.deadline, "HH:mm")-->
       </li>

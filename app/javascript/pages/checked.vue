@@ -17,7 +17,7 @@
         <span :class="{ done: todo.done }">{{ todo.body }}</span>
         <br>
         <span>{{ todo.valid_date }}</span>
-        <span>{{ todo.deadline | moment }}</span>
+        <span>{{ todo.deadline | moment }}まで</span>
         <hr>
       </li>
     </ul>
